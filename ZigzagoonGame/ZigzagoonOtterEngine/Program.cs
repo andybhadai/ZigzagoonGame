@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZigzagoonOtterEngine.Character;
 
 namespace ZigzagoonOtterEngine
 {
@@ -11,17 +12,15 @@ namespace ZigzagoonOtterEngine
     {
         static void Main(string[] args)
         {
-            // Create a Game.
             var game = new Game("Zigzagoon Game");
 
-            // Create a Scene.
+            Zigzagoon zigzagoon = new Zigzagoon();
+            zigzagoon.X = Game.Instance.HalfWidth;
+            zigzagoon.Y = Game.Instance.HalfHeight;
+
             var scene = new Scene();
-
-            // Add the Tiles Entity to the Scene.
             scene.Add(new GroundTile());
-
-            // Set the mouse visibility to true for this example.
-            game.MouseVisible = true;
+            scene.Add(zigzagoon);
 
             // Start the Game.
             game.Start(scene);

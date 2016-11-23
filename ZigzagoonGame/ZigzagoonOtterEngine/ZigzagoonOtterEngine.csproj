@@ -62,7 +62,6 @@
     <Compile Include="Character\Zigzagoon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tile.cs" />
     <Compile Include="Tiles\GroundTile.cs" />
     <Compile Include="Tiles\ITile.cs" />
   </ItemGroup>
