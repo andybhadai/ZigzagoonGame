@@ -1,18 +1,18 @@
-﻿using System;
+﻿using Otter;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Otter;
+using ZigzagoonOtterEngine.Character;
 
-namespace ZigzagoonOtterEngine.Character
+namespace ZigzagoonOtterEngine.Characters
 {
-    public class Zigzagoon : Entity, ICharacter
+    class DummyEnemy : Entity, ICharacter
     {
-        
-        public Zigzagoon() : base()
+        public DummyEnemy() : base()
         {
-            var image = Image.CreateRectangle(32);
+            var image = Image.CreateRectangle(50);
             AddGraphic(image);
         }
 
@@ -20,35 +20,11 @@ namespace ZigzagoonOtterEngine.Character
         {
             get
             {
-                return 15;
+                return 5;
             }
         }
 
         public int Defence
-        {
-            get
-            {
-                return 35;
-            }
-        }
-
-        public string Species
-        {
-            get
-            {
-                return "Zigzagoon";
-            }
-        }
-
-        public int Speed
-        {
-            get
-            {
-                return 10;
-            }
-        }
-
-        public int ID
         {
             get
             {
@@ -60,23 +36,28 @@ namespace ZigzagoonOtterEngine.Character
         {
             get
             {
-                return 50;
+                return 5;
             }
+
             set
             {
                 this.Health = value;
             }
         }
 
-        public Vector2 Position
+        public string Species
         {
             get
             {
-                return new Vector2(0.0f, 0.0f);
+                return "Dummy";
             }
-            set
+        }
+
+        public int Speed
+        {
+            get
             {
-                this.Position = value;
+                return 20;
             }
         }
 
@@ -88,22 +69,26 @@ namespace ZigzagoonOtterEngine.Character
 
         public void Move()
         {
-            if (Input.KeyDown(Key.W))
+            Random randomNumber = new Random();
+            int random = randomNumber.Next(0, 3);
+            Console.WriteLine(random);
+
+            if (random == 0)
             {
                 this.Y -= this.Speed;
             }
 
-            if (Input.KeyDown(Key.S))
+            if (random == 1)
             {
                 this.Y += this.Speed;
             }
 
-            if (Input.KeyDown(Key.A))
+            if (random == 2)
             {
                 this.X -= this.Speed;
             }
 
-            if (Input.KeyDown(Key.D))
+            if (random == 3)
             {
                 this.X += this.Speed;
             }

@@ -14,8 +14,6 @@ namespace ZigzagoonOtterEngine.Character
         int Attack { get; }
         int Defence { get; }
         int Speed { get; }
-        int ID { get; }
-        //Vector2 Position { get; set; }
         void Move();
     }
 }
