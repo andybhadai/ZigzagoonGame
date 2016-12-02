@@ -69,29 +69,29 @@ namespace ZigzagoonOtterEngine.Characters
 
         public void Move()
         {
-            Random randomNumber = new Random();
-            int random = randomNumber.Next(0, 3);
-            Console.WriteLine(random);
+            //Random randomNumber = new Random();
+            //int random = randomNumber.Next(0, 3);
+            //Console.WriteLine(random);
 
-            if (random == 0)
-            {
-                this.Y -= this.Speed;
-            }
+            //if (random == 0)
+            //{
+            //    this.Y -= this.Speed;
+            //}
 
-            if (random == 1)
-            {
-                this.Y += this.Speed;
-            }
+            //if (random == 1)
+            //{
+            //    this.Y += this.Speed;
+            //}
 
-            if (random == 2)
-            {
-                this.X -= this.Speed;
-            }
+            //if (random == 2)
+            //{
+            //    this.X -= this.Speed;
+            //}
 
-            if (random == 3)
-            {
-                this.X += this.Speed;
-            }
+            //if (random == 3)
+            //{
+            //    this.X += this.Speed;
+            //}
         }
     }
 }

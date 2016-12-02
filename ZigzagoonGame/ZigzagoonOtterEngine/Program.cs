@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ZigzagoonOtterEngine.Character;
 using ZigzagoonOtterEngine.Characters;
+using ZigzagoonOtterEngine.Scenes;
 
 namespace ZigzagoonOtterEngine
 {
@@ -13,23 +14,10 @@ namespace ZigzagoonOtterEngine
     {
         static void Main(string[] args)
         {
-            var game = new Game("Zigzagoon Game");
-
-            DummyEnemy dummy = new DummyEnemy();
-            dummy.X = 400.0f;
-            dummy.Y = 100.0f;
-
-            Zigzagoon zigzagoon = new Zigzagoon();
-            zigzagoon.X = Game.Instance.HalfWidth;
-            zigzagoon.Y = Game.Instance.HalfHeight;
-
-            var scene = new Scene();
-            scene.Add(new GroundTile());
-            scene.Add(zigzagoon);
-            scene.Add(dummy);
+            var game = new Game("Zigzagoon Game", 1200, 600);
 
             // Start the Game.
-            game.Start(scene);
+            game.Start(new HomeScene());
         }
     }
 }

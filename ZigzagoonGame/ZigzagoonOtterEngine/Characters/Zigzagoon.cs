@@ -8,8 +8,7 @@ using Otter;
 namespace ZigzagoonOtterEngine.Character
 {
     public class Zigzagoon : Entity, ICharacter
-    {
-        
+    {   
         public Zigzagoon() : base()
         {
             var image = Image.CreateRectangle(32);
