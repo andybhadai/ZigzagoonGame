@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ZigzagoonOtterEngine.Tiles
 {
-    class Tile
+    public interface ITile
     {
     }
 }

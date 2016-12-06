@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZigzagoonOtterEngine.Tiles
+namespace Sandbox
 {
-    class Tile
+    class Program
     {
+        static void Main(string[] args)
+        {
+            Console.ReadLine();
+        }
     }
 }

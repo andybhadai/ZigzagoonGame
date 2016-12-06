@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ZigzagoonOtterEngine.Tiles
+namespace Sandbox.Factory
 {
-    class Tile
-    {
-    }
 }

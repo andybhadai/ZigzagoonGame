@@ -12,6 +12,7 @@ namespace ZigzagoonOtterEngine.Scenes
 {
     class HomeScene : Scene, IScene
     {
+
         public HomeScene(int width = 0, int height = 0) : base(width, height)
         {
             this.LoadScene();
@@ -29,7 +30,6 @@ namespace ZigzagoonOtterEngine.Scenes
 
             this.Add(zigzagoon);
             this.Add(dummy);
-            this.Add(new Tile());
         }
 
         public void AddGraphics()
