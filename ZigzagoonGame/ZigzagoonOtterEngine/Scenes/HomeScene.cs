@@ -31,10 +31,8 @@ namespace ZigzagoonOtterEngine.Scenes
 
             for (int i = 0; i < 50; i++)
             {
-                // Check out the Rand class for random generation!
                 var x = Rand.Float(Game.Instance.Width);
                 var y = Rand.Float(Game.Instance.Height);
-                // Add the Collectable at the randomized position.
                 this.Add(new SampleCollectable(x, y));
             }
 
