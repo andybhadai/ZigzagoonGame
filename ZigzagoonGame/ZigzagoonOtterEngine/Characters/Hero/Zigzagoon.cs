@@ -4,15 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Otter;
+using ZigzagoonOtterEngine.Characters;
 
 namespace ZigzagoonOtterEngine.Character
 {
     public class Zigzagoon : Entity, ICharacter
-    {   
+    {
+
+        public static int Score = 0;
+        BoxCollider Collider = new BoxCollider(32, 32, Tags.Player);
+
         public Zigzagoon() : base()
         {
             var image = Image.CreateRectangle(32);
             AddGraphic(image);
+            image.CenterOrigin();
+            AddCollider(Collider);
+            this.Collider.CenterOrigin();
         }
 
         public int Attack
@@ -106,6 +114,12 @@ namespace ZigzagoonOtterEngine.Character
             {
                 this.X += this.Speed;
             }
+        }
+
+        public override void Render()
+        {
+            base.Render();
+            this.Collider.Render();
         }
     }
 }

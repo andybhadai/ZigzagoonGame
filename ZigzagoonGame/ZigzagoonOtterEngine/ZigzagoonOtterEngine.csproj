@@ -58,9 +58,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Collectables\SampleCollectable.cs" />
     <Compile Include="Characters\DummyEnemy.cs" />
     <Compile Include="Characters\ICharacter.cs" />
-    <Compile Include="Characters\Zigzagoon.cs" />
+    <Compile Include="Characters\Tags.cs" />
+    <Compile Include="Characters\Hero\Zigzagoon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\HomeScene.cs" />
