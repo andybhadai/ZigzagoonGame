@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ZigzagoonOtterEngine.Character;
 using ZigzagoonOtterEngine.Characters;
 using ZigzagoonOtterEngine.Scenes;
+using ZigzagoonOtterEngine.States;
 
 namespace ZigzagoonOtterEngine
 {
@@ -14,10 +15,14 @@ namespace ZigzagoonOtterEngine
     {
         static void Main(string[] args)
         {
+            ZigzagoonGameState state = new ZigzagoonGameState(new GamePlayingState());
+
             var game = new Game("Zigzagoon Game", 1200, 600);
 
             // Start the Game.
             game.Start(new HomeScene());
+
+            state.Pause();
         }
     }
 }

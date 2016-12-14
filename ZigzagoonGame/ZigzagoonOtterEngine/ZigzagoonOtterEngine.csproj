@@ -61,13 +61,16 @@
     <Compile Include="Assets\Collectables\SampleCollectable.cs" />
     <Compile Include="Characters\DummyEnemy.cs" />
     <Compile Include="Characters\ICharacter.cs" />
-    <Compile Include="Characters\Tags.cs" />
+    <Compile Include="Scenes\MiniGame.cs" />
+    <Compile Include="Tags.cs" />
     <Compile Include="Characters\Hero\Zigzagoon.cs" />
+    <Compile Include="Objects\Pillars\IPillar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\HomeScene.cs" />
     <Compile Include="Scenes\IScene.cs" />
     <Compile Include="Scenes\JungleScene.cs" />
+    <Compile Include="States\States.cs" />
     <Compile Include="Status\HealthBar.cs" />
     <Compile Include="Tiles\ITile.cs" />
     <Compile Include="Tiles\Tile.cs" />

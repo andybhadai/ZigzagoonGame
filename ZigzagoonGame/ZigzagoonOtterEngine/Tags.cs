@@ -9,6 +9,8 @@ namespace ZigzagoonOtterEngine.Characters
     public enum Tags
     {
         Player,
-        Collectable
+        Collectable,
+        Pillar,
+        PushablePillar
     }
 }
