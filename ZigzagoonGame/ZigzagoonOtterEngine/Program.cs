@@ -20,7 +20,7 @@ namespace ZigzagoonOtterEngine
             var game = new Game("Zigzagoon Game", 1200, 600);
 
             // Start the Game.
-            game.Start(new HomeScene());
+            game.Start(new MiniGame());
 
             state.Pause();
         }

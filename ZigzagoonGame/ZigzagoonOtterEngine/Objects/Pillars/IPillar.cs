@@ -11,30 +11,25 @@ namespace ZigzagoonOtterEngine.Objects.Pillars
 {
     public interface IPillar
     {
-        void Create(Zigzagoon zigzagoon, int id);
+        void Create(Zigzagoon zigzagoon, Vector2 Position, int id);
         int Damage { get; }
         string Material { get; }
         bool Pushable { get; }
         Vector2 Position { get; set; }
     }
 
-    public abstract class PillarFactory : Entity
+    public abstract class PillarFactory
     {
-        public abstract IPillar Create(Zigzagoon zigzagoon, int id);
+        public abstract Entity Create(Zigzagoon zigzagoon, Vector2 position, int id);
     }
 
     public class LandPillarFactory : PillarFactory
     {
-        public override IPillar Create(Zigzagoon zigzagoon, int id)
+        public override Entity Create(Zigzagoon zigzagoon, Vector2 position, int id)
         {
             if(id == 1)
             {
-                return new WoodenPillar(zigzagoon);
-            }
-
-            if(id == 2)
-            {
-                return new IronPillar();
+                return new WoodenPillar(zigzagoon, position);
             }
 
             throw new Exception("Wrong pillar!");
@@ -46,18 +41,17 @@ namespace ZigzagoonOtterEngine.Objects.Pillars
         Image Image = Image.CreateRectangle(20, 100, Color.Gold);
         BoxCollider Collider = new BoxCollider(20, 100, Tags.PushablePillar);
         Zigzagoon Zigzagoon;
-        
+        Vector2 Position = new Vector2();
+
         public WoodenPillar(Zigzagoon zigzagoon, Vector2 position)
         {
             this.Zigzagoon = zigzagoon;
 
             AddGraphic(this.Image);
+            SetPosition(position.X, position.Y);
             this.Image.CenterOrigin();
             AddCollider(this.Collider);
             this.Collider.CenterOrigin();
-
-            this.X = position.X;
-            this.Y = position.Y;
         }
 
         public override void Update()
@@ -95,54 +89,8 @@ namespace ZigzagoonOtterEngine.Objects.Pillars
             }
         }
 
-        public void Create(Zigzagoon zigzagoon, int id)
+        public void Create(Zigzagoon zigzagoon, Vector2 Position, int id)
         {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class IronPillar : IPillar
-    {
-        public int Damage
-        {
-            get
-            {
-                return 0;
-            }
-        }
-
-        public string Material
-        {
-            get
-            {
-                return "Iron";
-            }
-        }
-
-        public Vector2 Position
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public bool Pushable
-        {
-            get
-            {
-                return true;
-            }
-        }
-
-        public void Create(Zigzagoon zigzagoon, int id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

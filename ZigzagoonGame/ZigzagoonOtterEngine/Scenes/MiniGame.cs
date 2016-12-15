@@ -13,6 +13,7 @@ namespace ZigzagoonOtterEngine.Scenes
     {
         public MiniGame(int width = 0, int height = 0) : base(width, height)
         {
+            this.LoadScene();
         }
 
         public void AddEntities()
@@ -26,18 +27,19 @@ namespace ZigzagoonOtterEngine.Scenes
 
             for(int i = 0; i < 5; i++)
             {
-                var landPillar = pillarFactory.Create(zigzagoon, new Vector2((float)i, (float)i), 1);
+                var woodenPillar = pillarFactory.Create(zigzagoon, new Vector2((float)i * 10, (float)i * 10), 1);
+                this.Add(woodenPillar);
             }
         }
 
         public void AddGraphics()
         {
-            throw new NotImplementedException();
         }
 
         public void LoadScene()
         {
-            throw new NotImplementedException();
+            this.AddEntities();
+            this.AddGraphics();
         }
     }
 }
