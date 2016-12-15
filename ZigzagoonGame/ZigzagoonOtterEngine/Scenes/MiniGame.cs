@@ -27,7 +27,7 @@ namespace ZigzagoonOtterEngine.Scenes
 
             for(int i = 0; i < 5; i++)
             {
-                var woodenPillar = pillarFactory.Create(zigzagoon, new Vector2((float)i * 10, (float)i * 10), 1);
+                var woodenPillar = pillarFactory.Create(zigzagoon, new Vector2(Rand.Float(Game.Instance.Width), Rand.Float(Game.Instance.Height)), 1);
                 this.Add(woodenPillar);
             }
         }
